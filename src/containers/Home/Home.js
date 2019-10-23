@@ -77,7 +77,7 @@ const useStyles = makeStyles(theme => ({
     },
     text: {
         color: 'white',
-        fontFamily: "'Roboto', sans-serif",
+        fontFamily: "'Orbitron', sans-serif;",
         width: "70%",
         fontSize: '2em',
         textAlign: 'left',
