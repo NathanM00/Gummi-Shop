@@ -75,11 +75,16 @@ const p5canvas = (domElem) => (application) => {
     var weapons = {
         type: 'x',
     };
-
+    var dirX = 0, dirY = 0;
 
     application.setup = () => {
         var canvas = application.createCanvas(500, 470, application.WEBGL);
         canvas.parent(domElem);
+    }
+
+    application.mouseDragged = () => {
+        dirX = (application.mouseX / application.width - 0.5) * 2;
+        dirY = (application.mouseY / application.height - 0.5) * 2;
     }
 
     application.draw = () => {
@@ -88,12 +93,10 @@ const p5canvas = (domElem) => (application) => {
         application.rotateX(-0.5);
         application.ambientLight(200);
 
-        application.pointLight(255, 255, 255, 300, 600, 50);
-
-        let dirX = (application.mouseX / application.width - 0.5) * 2;
-        let dirY = (application.mouseY / application.height - 0.5) * 2;
-        application.rotateX(dirY);
+        application.rotateX(-dirY);
         application.rotateY(dirX);
+
+        application.pointLight(255, 255, 255, 300, 600, 50);
 
         if (cabin.type === 'A') {
             application.fill('#CAF4FF');
@@ -258,7 +261,7 @@ const useStyles = makeStyles(theme => ({
     button: {
         width: "35%",
         height: "10%",
-        border:'rgba(0,0,0,0) 2px solid',
+        border: 'rgba(0,0,0,0) 2px solid',
         backgroundColor: 'rgba(0,0,0,0)',
         backgroundSize: '50%',
         fontSize: '1em',
