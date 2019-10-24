@@ -1,21 +1,27 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 
-var price;
+var price = 0;
 
 function Cost(props) {
 
-    price = props.price;
     const classes = useStyles();
+
+    const [price, setPrice] = React.useState(0);
+
+    if (price !== props.price) {
+        setPrice(props.price);
+        console.log(price);
+    }
 
     return (
         <div className={classes.container}>
             <div className={classes.info}>
                 <p className={classes.data}>Cost</p>
-                <p className={classes.data}><span>{price}</span>/1000</p>
+                <p className={classes.data}><span>{price}</span>/100</p>
             </div>
             <div className={classes.bar}>
-                <div className={classes.innerBar}>
+                <div className={classes.innerBar} style={{ width: price + "%", flexBasis: price + "%" }}>
                 </div>
             </div>
 
@@ -44,11 +50,11 @@ const useStyles = makeStyles(theme => ({
         alignItems: 'center',
 
     },
-    data:{
+    data: {
         fontSize: '1.3em',
         fontFamily: "'Orbitron', sans-serif;",
 
-        '& span':{
+        '& span': {
             fontSize: '1.4em',
         },
     },
@@ -63,11 +69,10 @@ const useStyles = makeStyles(theme => ({
         borderRadius: '10px',
     },
     innerBar: {
-        width: price / 10 + '%',
         height: '100%',
-        flexBasis: price / 10 + '%',
         backgroundColor: '#00FFFF',
         borderRadius: '10px',
+        transition: 'all 1.5s',
     },
 
 }));

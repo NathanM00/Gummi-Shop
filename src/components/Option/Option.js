@@ -5,7 +5,7 @@ import bg from '../../resources/unknown.svg';
 function Option(props) {
 
     const classes = useStyles();
-
+ 
     var properties = {
         roll: props.rolling,
         speed: props.speed,

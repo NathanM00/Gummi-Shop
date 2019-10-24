@@ -17,6 +17,92 @@ function ShopContainer(props) {
     const [displayMov, setDisplayMov] = React.useState('flex');
     const [displayWea, setDisplayWea] = React.useState('flex');
 
+    var weapons = {
+        roll: 0,
+        speed: 0,
+        hp: 0,
+        price: 0,
+        offe: 0,
+        power: 0,
+        mobi: 0,
+    }
+    var wings = {
+        roll: 0,
+        speed: 0,
+        hp: 0,
+        price: 0,
+        offe: 0,
+        power: 0,
+        mobi: 0,
+    }
+    var cabin = {
+        roll: 0,
+        speed: 0,
+        hp: 0,
+        price: 0,
+        offe: 0,
+        power: 0,
+        mobi: 0,
+    }
+
+    var price = 0, spd = 0, po = 0, hp = 0, off = 0, mob = 0, rol = 0;
+
+    if (props.weapons) {
+        weapons = {
+            roll: props.weapons.roll,
+            speed: props.weapons.speed,
+            hp: props.weapons.hp,
+            price: props.weapons.price,
+            offe: props.weapons.offe,
+            power: props.weapons.power,
+            mobi: props.weapons.mobi,
+        }
+        price = weapons.price + wings.price + cabin.price;
+        spd = weapons.speed + wings.speed + cabin.speed;
+        po = weapons.power + wings.power + cabin.power;
+        hp = weapons.hp + wings.hp + cabin.hp;
+        off = weapons.offe + wings.offe + cabin.offe;
+        mob = weapons.mobi + wings.mobi + cabin.mobi;
+        rol = weapons.roll + wings.roll + cabin.roll;
+    }
+    if (props.cabin) {
+        cabin = {
+            roll: props.cabin.roll,
+            speed: props.cabin.speed,
+            hp: props.cabin.hp,
+            price: props.cabin.price,
+            offe: props.cabin.offe,
+            power: props.cabin.power,
+            mobi: props.cabin.mobi,
+        }
+        price = weapons.price + wings.price + cabin.price;
+        spd = weapons.speed + wings.speed + cabin.speed;
+        po = weapons.power + wings.power + cabin.power;
+        hp = weapons.hp + wings.hp + cabin.hp;
+        off = weapons.offe + wings.offe + cabin.offe;
+        mob = weapons.mobi + wings.mobi + cabin.mobi;
+        rol = weapons.roll + wings.roll + cabin.roll;
+    }
+    if (props.wings) {
+        wings = {
+            roll: props.wings.roll,
+            speed: props.wings.speed,
+            hp: props.wings.hp,
+            price: props.wings.price,
+            offe: props.wings.offe,
+            power: props.wings.power,
+            mobi: props.wings.mobi,
+        }
+        price = weapons.price + wings.price + cabin.price;
+        spd = weapons.speed + wings.speed + cabin.speed;
+        po = weapons.power + wings.power + cabin.power;
+        hp = weapons.hp + wings.hp + cabin.hp;
+        off = weapons.offe + wings.offe + cabin.offe;
+        mob = weapons.mobi + wings.mobi + cabin.mobi;
+        rol = weapons.roll + wings.roll + cabin.roll;
+    }
+
+
     const classes = useStyles();
 
     function handleSelector(type) {
@@ -92,13 +178,13 @@ function ShopContainer(props) {
 
                 <div className={classes.container3} >
 
-                    <Cost price={300}></Cost>
+                    <Cost price={price}></Cost>
 
                 </div>
 
                 <div className={classes.container4} >
 
-                    <Radar spd={20} po={25} hp={10} of={40} mob={10} rol={20}></Radar>
+                    <Radar spd={spd} po={po} hp={hp} off={off} mob={mob} rol={rol}></Radar>
 
                 </div>
 

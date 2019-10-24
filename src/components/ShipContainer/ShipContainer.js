@@ -108,23 +108,31 @@ const p5canvas = (domElem) => (application) => {
         }
 
         if (wings.type === 'A') {
-            application.fill('#444444');
-            application.box(270, 10, 50);
+            application.fill('#ffffff');
+            application.translate(0, -30, 0);
+            application.cylinder(5, 140, 20);
+            application.translate(0, 30, 0);
+            application.rotateY(application.frameCount * 0.2);
+            application.translate(0, -100, 0);
+            application.fill('#ffffff');
+            application.box(210, 10, 30);
+            application.rotateY(application.frameCount * -0.2);
+            application.translate(0, 100, 0);
         } else if (wings.type === 'B') {
-            application.fill('#444444');
+            application.fill('#ffffff');
             application.rotateZ(1.57);
             application.cylinder(5, 250, 20);
             application.rotateZ(-1.57);
-            application.rotateX(application.frameCount * 0.1);
+            application.rotateX(application.frameCount * 0.2);
             application.translate(-140, 0, 0);
             application.box(30, 10, 90);
             application.translate(280, 0, 0);
             application.box(30, 10, 90);
             application.translate(-140, 0, 0);
-            application.rotateX(application.frameCount * -0.1);
+            application.rotateX(application.frameCount * -0.2);
         } else if (wings.type === 'C') {
-            application.fill('#444444');
-            application.rotateZ(application.frameCount * 0.01);
+            application.fill('#ffffff');
+            application.rotateZ(application.frameCount * 0.02);
             application.torus(90, 10);
 
         }

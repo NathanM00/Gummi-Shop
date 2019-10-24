@@ -40,9 +40,9 @@ function Selector(props) {
                 </div>
 
                 <div className={classes.bigOptions}>
-                    <Option color={'#DC2828'} rolling={10} speed={10} hp={10} price={10} offense={10} power={10} mobility={10} id={'A'} onClick={getPiece} type={props.type}></Option>
-                    <Option color={'#2869DC'} rolling={20} speed={20} hp={20} price={20} offense={20} power={20} mobility={20} id={'B'} onClick={getPiece}  type={props.type}></Option>
-                    <Option color={'#37d67a'} rolling={30} speed={30} hp={30} price={30} offense={30} power={30} mobility={30} id={'C'} onClick={getPiece}  type={props.type}></Option>
+                    <Option color={'#DC2828'} rolling={5} speed={6} hp={8} price={10} offense={10} power={10} mobility={10} id={'A'} onClick={getPiece} type={props.type}></Option>
+                    <Option color={'#2869DC'} rolling={15} speed={11} hp={14} price={20} offense={16} power={19} mobility={10} id={'B'} onClick={getPiece}  type={props.type}></Option>
+                    <Option color={'#37d67a'} rolling={20} speed={18} hp={20} price={30} offense={25} power={28} mobility={30} id={'C'} onClick={getPiece}  type={props.type}></Option>
                     <Option rolling={'none'} speed={'none'} hp={'none'} price={'none'} offense={'none'} power={'none'} mobility={'none'}></Option>
                     <Option rolling={'none'} speed={'none'} hp={'none'} price={'none'} offense={'none'} power={'none'} mobility={'none'}></Option>
                     <Option rolling={'none'} speed={'none'} hp={'none'} price={'none'} offense={'none'} power={'none'} mobility={'none'}></Option>
