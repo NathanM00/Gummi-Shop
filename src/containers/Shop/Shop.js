@@ -8,6 +8,19 @@ import ShipContainer from '../../components/ShipContainer/ShipContainer';
 function Shop(props) {
 
     const classes = useStyles();
+    const [cabin, setCabin] = React.useState();
+    const [weapons, setWeapons] = React.useState();
+    const [wings, setWings] = React.useState();
+
+    function handleSelection(selection) {
+        if (selection.type === 'cab') {
+            setCabin(selection);
+        } else if (selection.type === 'wea') {
+            setWeapons(selection);
+        } else if (selection.type === 'win') {
+            setWings(selection);
+        }
+    }
 
     return (
         <div className={classes.main}>
@@ -20,28 +33,25 @@ function Shop(props) {
 
                 <section className={classes.notTitle}>
 
-                    <ShopContainer width='25%' height='90%' basis='25%' number={1}>
+                    <ShopContainer  number={1} onSelection={handleSelection}>
 
                     </ShopContainer>
 
 
-                    <ShipContainer width='42%' height='100%' basis='42%' >
+                    <ShipContainer  cabin={cabin} wings={wings} weapons={weapons}>
 
                     </ShipContainer>
 
-                    <ShopContainer width='25%' height='90%' basis='25%'  number={2}>
+                    <ShopContainer  number={2}>
 
                     </ShopContainer>
 
                 </section>
 
-
             </section>
         </div>
 
     );
-
-
 
 }
 
@@ -62,6 +72,7 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: 'rgba(28, 28, 28,0)',
         textAlign: 'center',
         border: 'none',
+        width: '40%',
         color: 'white',
     },
     content: {

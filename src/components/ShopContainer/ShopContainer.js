@@ -7,7 +7,6 @@ import cIcon from '../../resources/cabinIcon.svg';
 import Radar from '../../components/Radar/Radar';
 import Cost from '../../components/ Cost/Cost';
 
-var width, height, basis;
 
 function ShopContainer(props) {
 
@@ -18,26 +17,54 @@ function ShopContainer(props) {
     const [displayMov, setDisplayMov] = React.useState('flex');
     const [displayWea, setDisplayWea] = React.useState('flex');
 
-    width = props.width;
-    height = props.height;
-    basis = props.basis;
-
     const classes = useStyles();
 
-    function handleSelector(type){
-        if(type === 'cab'){
+    function handleSelector(type) {
+        if (type === 'cab') {
             setDisplayMov('none');
             setDisplayWea('none');
             setCabOptions(true);
-        } else if(type === 'wea'){
+        } else if (type === 'wea') {
             setDisplayMov('none');
             setDisplayCab('none');
             setWeaOptions(true);
-        } else if(type === 'mov'){
+        } else if (type === 'win') {
             setDisplayWea('none');
             setDisplayCab('none');
             setMovOptions(true);
         }
+    }
+
+    function handleBack(value) {
+        if (value) {
+            setDisplayWea('flex');
+            setDisplayMov('flex');
+            setDisplayCab('flex');
+            setMovOptions(false);
+            setWeaOptions(false);
+            setCabOptions(false);
+        }
+
+    }
+
+    function handleCabin(piece) {
+        handleShip(piece)
+    }
+
+    function handleWing(piece) {
+        handleShip(piece)
+    }
+
+    function handleWeapon(piece) {
+        handleShip(piece)
+    }
+
+    function handleShip(piece) {
+
+        if (typeof props.onSelection === 'function') {
+            props.onSelection(piece);
+        }
+
     }
 
     if (props.number === 1) {
@@ -47,11 +74,11 @@ function ShopContainer(props) {
 
                 <div className={classes.container2}>
 
-                    <Selector title='Cabin Gummies' onClick={handleSelector} displayBar={displayCab} displayOptions={cabOptions} img={cIcon} type={'cab'}></Selector>
+                    <Selector title='Cabin Gummies' onChange={handleCabin} onClick={handleSelector} onBack={handleBack} displayBar={displayCab} displayOptions={cabOptions} img={cIcon} type={'cab'}></Selector>
 
-                    <Selector title='Movement Gummies' onClick={handleSelector} displayBar={displayMov} displayOptions={movOptions} img={mIcon} type={'mov'}></Selector>
+                    <Selector title='Movement Gummies' onChange={handleWing} onClick={handleSelector} onBack={handleBack} displayBar={displayMov} displayOptions={movOptions} img={mIcon} type={'win'}></Selector>
 
-                    <Selector title='Weapon Gummies'  onClick={handleSelector} displayBar={displayWea} displayOptions={waeOptions} img={wIcon} type={'wea'}></Selector>
+                    <Selector title='Weapon Gummies' onChange={handleWeapon} onClick={handleSelector} onBack={handleBack} displayBar={displayWea} displayOptions={waeOptions} img={wIcon} type={'wea'}></Selector>
 
                 </div>
             </div>
@@ -65,13 +92,13 @@ function ShopContainer(props) {
 
                 <div className={classes.container3} >
 
-                <Cost price={300}></Cost>
+                    <Cost price={300}></Cost>
 
                 </div>
 
                 <div className={classes.container4} >
 
-                    <Radar spd={20} po={25} hp={10}  of={40} mob={10} rol={20}></Radar>
+                    <Radar spd={20} po={25} hp={10} of={40} mob={10} rol={20}></Radar>
 
                 </div>
 
@@ -87,9 +114,9 @@ const useStyles = makeStyles(theme => ({
 
     container: {
         display: 'flex',
-        width: width,
-        height: height,
-        flexBasis: basis,
+        width: '25%',
+        height: '90%',
+        flexBasis: '25%',
         flexDirection: ' column',
         justifyContent: 'space-between',
     },

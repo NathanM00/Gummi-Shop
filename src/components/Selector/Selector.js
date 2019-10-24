@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Option from '../../components/Option/Option';
+import bIcon from '../../resources/bIcon.svg';
 
 var displayBar;
 var displayOptions;
@@ -17,25 +18,36 @@ function Selector(props) {
         }
     }
 
+    function goBack() {
+        if (typeof props.onClick === 'function') {
+            props.onBack(true);
+        }
+    }
+
+    function getPiece(newPiece) {
+        if (typeof props.onClick === 'function') {
+            props.onChange(newPiece);
+        }
+    }
+
     if (displayOptions) {
         return (
             <div className={classes.bigContainer} >
 
                 <div className={classes.bigTitles}>
-                    <button className={classes.back}></button>
+                    <button className={classes.back} onClick={goBack}></button>
                     <p className={classes.bigTitle}>{props.title}</p>
                 </div>
 
                 <div className={classes.bigOptions}>
-                    <Option></Option>
-                    <Option></Option>
-                    <Option></Option>
-                    <Option></Option>
-                    <Option></Option>
-                    <Option></Option>
-                    <Option></Option>
+                    <Option color={'#DC2828'} rolling={10} speed={10} hp={10} price={10} offense={10} power={10} mobility={10} id={'A'} onClick={getPiece} type={props.type}></Option>
+                    <Option color={'#2869DC'} rolling={20} speed={20} hp={20} price={20} offense={20} power={20} mobility={20} id={'B'} onClick={getPiece}  type={props.type}></Option>
+                    <Option color={'#37d67a'} rolling={30} speed={30} hp={30} price={30} offense={30} power={30} mobility={30} id={'C'} onClick={getPiece}  type={props.type}></Option>
+                    <Option rolling={'none'} speed={'none'} hp={'none'} price={'none'} offense={'none'} power={'none'} mobility={'none'}></Option>
+                    <Option rolling={'none'} speed={'none'} hp={'none'} price={'none'} offense={'none'} power={'none'} mobility={'none'}></Option>
+                    <Option rolling={'none'} speed={'none'} hp={'none'} price={'none'} offense={'none'} power={'none'} mobility={'none'}></Option>
+                    <Option rolling={'none'} speed={'none'} hp={'none'} price={'none'} offense={'none'} power={'none'} mobility={'none'}></Option>
                 </div>
-
 
             </div>
         );
@@ -70,18 +82,25 @@ const useStyles = makeStyles(theme => ({
         borderRadius: '10px',
     },
     back: {
-        width: '20%',
-        height: '20%',
-        flexBasis: '20%',
+        width: '10%',
+        height: '40%',
+        flexBasis: '10%',
+        margin: '0',
         justifySelf: 'flex-start',
+        marginLeft: '2.7em',
+        background: 'url(' + bIcon + ')',
+        backgroundSize: 'cover',
+        border: 'none',
+        cursor: 'pointer',
+
     },
     bigTitle: {
         fontSize: '1.5em',
         textAlign: 'center',
         color: 'white',
         margin: '0',
-        width: '30%',
-        flexBasis: '30%',
+        marginRight: '4.5em',
+        width: '40%',
         fontFamily: "'Orbitron', sans-serif;",
     },
     bigImg: {
@@ -95,7 +114,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: '0.5em',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
     },
     bigOptions: {
         width: '100%',
@@ -125,6 +144,7 @@ const useStyles = makeStyles(theme => ({
             background: ' linear-gradient(to right, rgba(144,100,23,0.95) 0%, rgba(239,158,1,0.95) 20%, rgba(255,180,0,0.95) 49%, rgba(239,158,1,0.95) 82%, rgba(144,100,23,0.95) 100%);',
             fontSize: '1.3em',
             paddingLeft: '1em',
+            cursor: 'pointer',
         },
 
     },
