@@ -10,13 +10,11 @@ function Home(props) {
     function handleClick(info) {
         props.history.push('/shop');
     }
-    function goHome(info) {
-        props.history.push('/');
-    }
+
     return (
         <div className={classes.main}>
 
-            <Nav props={props} onClick={goHome}></Nav>
+            <Nav></Nav>
 
             <section className={classes.content}>
 

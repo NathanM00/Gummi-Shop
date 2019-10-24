@@ -6,8 +6,6 @@ import wIcon from '../../resources/wIcon.svg';
 import cIcon from '../../resources/cabinIcon.svg';
 import Radar from '../../components/Radar/Radar';
 import Cost from '../../components/ Cost/Cost';
-import { Link } from "react-router-dom";
-
 
 function ShopContainer(props) {
 
@@ -19,6 +17,8 @@ function ShopContainer(props) {
     const [displayWea, setDisplayWea] = React.useState('flex');
     const [displayBuy, setDisplayBuy] = React.useState('none');
     const [ready, setReady] = React.useState(false);
+
+    var myStorage = window.localStorage;
 
     var weapons = {
         roll: 0,
@@ -79,6 +79,8 @@ function ShopContainer(props) {
         fullShip = {
             price: price, spd: spd, po: po, hp: hp, off: off, mob: mob, rol: rol, id: id
         };
+
+        myStorage.setItem('shipCaract', JSON.stringify(fullShip));
     }
     if (props.wings) {
         wings = {
@@ -102,6 +104,8 @@ function ShopContainer(props) {
         fullShip = {
             price: price, spd: spd, po: po, hp: hp, off: off, mob: mob, rol: rol, id: id
         };
+        myStorage.setItem('shipCaract', JSON.stringify(fullShip));
+
     }
     if (props.weapons) {
         weapons = {
@@ -125,6 +129,7 @@ function ShopContainer(props) {
         fullShip = {
             price: price, spd: spd, po: po, hp: hp, off: off, mob: mob, rol: rol, id: id
         };
+        myStorage.setItem('shipCaract', JSON.stringify(fullShip));
     }
 
     if (fullShip.id.length === 5 && !ready) {
@@ -183,6 +188,16 @@ function ShopContainer(props) {
         }
     }
 
+    function handleClose() {
+        if (myStorage.getItem('image') && myStorage.getItem('shipCaract')) {
+            if (typeof props.onSelection === 'function') {
+                props.onClose(true);
+            }
+        } else {
+
+        }
+    }
+
     if (props.number === 1 && !ready) {
         return (
 
@@ -213,9 +228,10 @@ function ShopContainer(props) {
 
                     <Selector title='Weapon Gummies' onChange={handleWeapon} onClick={handleSelector} onBack={handleBack} displayBar={displayWea} displayOptions={waeOptions} img={wIcon} type={'wea'}></Selector>
 
-                    <Link to={'/ship='+fullShip.id+fullShip.name} style={{ display: displayBuy, }} className={classes.link}>
-                        <button style={{ display: displayBuy, }} className={classes.button}>Buy GummiShip</button>
-                    </Link>
+                    <button style={{ display: displayBuy, }} onClick={handleClose} className={classes.button}>Buy GummiShip
+
+                    <span className={classes.tooltiptext}>Remember to save your Ship first</span>
+                    </button>
                 </div>
             </div>
 
@@ -256,16 +272,6 @@ const useStyles = makeStyles(theme => ({
         flexDirection: ' column',
         justifyContent: 'space-between',
     },
-    link: {
-        display: 'flex',
-        width: "100%",
-        height: "15%",
-        flexBasis: "15%",
-        justifyContent: 'center',
-        alignItems: 'center',
-        textDecoration: 'none',
-
-    },
     container2: {
         display: 'flex',
         flexDirection: 'column',
@@ -292,11 +298,23 @@ const useStyles = makeStyles(theme => ({
         flexBasis: '75%',
         display: 'flex',
         justifyContent: 'center'
+    },  tooltiptext: {
+        display: 'none',
+        width: '120px',
+        backgroundColor: 'black',
+        color: '#fff',
+        textAlign: 'center',
+        borderRadius: '6px',
+        padding: ' 5px 0',
+        position: 'absolute',
+        zIndex: '1',
+    }, 'tooltip:hover tooltiptext': {
+        display: 'inner-block',
     },
     button: {
         width: "100%",
-        height: "100%",
-        flexBasis: "100%",
+        height: "15%",
+        flexBasis: "15%",
         border: 'none',
         borderTop: 'white 2px solid',
         borderBottom: 'white 2px solid',
@@ -305,7 +323,7 @@ const useStyles = makeStyles(theme => ({
         fontSize: '1em',
         color: '#EFB400',
         margin: '1em',
-        paddingRight: '4em',
+        paddingRight: '3em',
         paddingLeft: '0em',
         fontFamily: 'menuFont',
         transition: 'all 1s',

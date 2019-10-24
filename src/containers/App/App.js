@@ -9,15 +9,16 @@ import Ship from '../Ship/Ship';
 function App() {
 
   return (
+
     <Router >
-    <div className="App">
+      <div className="App">
 
-      <Route path="/" exact component={Home} />
-      <Route path="/shop" exact component={Shop} />
-      <Route path="/ship=" component={Ship} />
+          <Route path="/" exact component={Home} />
+          <Route path="/shop" exact component={Shop} />
+          <Route path="/ship" exact component={Ship} />
 
-    </div>
-  </Router>
+      </div>
+    </Router>
   );
 }
 

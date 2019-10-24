@@ -6,8 +6,16 @@ import p5 from 'p5';
 function ShipContainer(props) {
     const classes = useStyles();
 
-    const sketch = React.useRef();
+    var sketch = React.useRef();
     const canvasParent = React.useRef();
+    var myStorage = window.localStorage;
+
+    function saveImage() {
+        var image = canvasParent.current.querySelector('canvas').toDataURL();
+        myStorage.setItem('image', image);
+    }
+
+    var backG = props.backG;
 
     React.useEffect(() => {
         sketch.current = new p5(p5canvas(canvasParent.current));
@@ -27,20 +35,31 @@ function ShipContainer(props) {
         });
     }
     if (props.wings) {
-        //console.log(props.wings);
         sketch.current.createWings({
             col: props.wings.color,
             type: props.wings.id,
         });
     }
 
-    return (
-        <div className={classes.container}>
-            <section className="App-right" >
-                <div ref={canvasParent}></div>
-            </section>
-        </div>
-    );
+    if (backG) {
+        return (
+            <div className={classes.container}  >
+                <section className="App-right" >
+                    <div ref={canvasParent} ></div>
+                </section>
+                <button className={classes.button} onClick={saveImage}>Save Ship</button>
+            </div>
+        );
+    } else {
+        return (
+            <div className={classes.container} style={{ backgroundImage: 'none' }} >
+                <section className="App-right" >
+                    <div ref={canvasParent} ></div>
+                </section>
+            </div>
+        );
+    }
+
 }
 
 const p5canvas = (domElem) => (application) => {
@@ -217,7 +236,6 @@ const p5canvas = (domElem) => (application) => {
 
 }
 
-
 const useStyles = makeStyles(theme => ({
 
     container: {
@@ -230,7 +248,33 @@ const useStyles = makeStyles(theme => ({
         backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-    }
+        alignItems: 'center',
+    },
+    button: {
+        width: "35%",
+        height: "10%",
+        border:'rgba(0,0,0,0) 2px solid',
+        backgroundColor: 'rgba(0,0,0,0)',
+        backgroundSize: '50%',
+        fontSize: '1em',
+        color: 'white',
+        margin: '1em',
+        paddingLeft: '0em',
+        fontFamily: 'menuFont',
+        transition: 'all 1s',
+
+        '&:hover': {
+            borderTop: 'white 2px solid',
+            borderBottom: 'white 2px solid',
+            backgroundSize: '100%',
+            background: 'linear-gradient(to right, rgba(161,161,161,0.5) 0%, rgba(242,242,242,0.5) 24%, rgba(255,255,255,0.5) 51%, rgba(242,242,242,0.5) 78%, rgba(161,161,161,0.5) 100%);',
+            fontSize: '1em',
+            color: 'black',
+            paddingLeft: '0em',
+            paddingRight: '0em',
+            cursor: 'pointer',
+        },
+    },
 
 }));
 export default ShipContainer;

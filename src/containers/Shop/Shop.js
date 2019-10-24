@@ -11,10 +11,9 @@ function Shop(props) {
     const [cabin, setCabin] = React.useState(null);
     const [weapons, setWeapons] = React.useState(null);
     const [wings, setWings] = React.useState(null);
+    const [close, setClose] = React.useState(false);
 
-    var shipName;
-
-    function handleSelection(selection ) {
+    function handleSelection(selection) {
         if (selection.type === 'cab') {
             setCabin(selection);
         } else if (selection.type === 'wea') {
@@ -22,13 +21,17 @@ function Shop(props) {
         } else if (selection.type === 'win') {
             setWings(selection);
         }
-
     }
 
-    function handleName(event){
-        shipName = event.target.value;
+    function handleName(event) {
+        var shipName = event.target.value;
+
+        window.localStorage.setItem('name',shipName);
     }
 
+    function goShip(info) {
+      props.history.push('/ship');
+    }
 
     return (
         <div className={classes.main}>
@@ -41,12 +44,12 @@ function Shop(props) {
 
                 <section className={classes.notTitle}>
 
-                    <ShopContainer name={shipName} cabin={cabin} wings={wings} weapons={weapons} number={1} onSelection={handleSelection} >
+                    <ShopContainer  cabin={cabin} onClose={goShip} wings={wings} weapons={weapons} number={1} onSelection={handleSelection} >
 
                     </ShopContainer>
 
 
-                    <ShipContainer  cabin={cabin} wings={wings} weapons={weapons}>
+                    <ShipContainer backG={true} cabin={cabin} isClosing={close} wings={wings} weapons={weapons}>
 
                     </ShipContainer>
 
