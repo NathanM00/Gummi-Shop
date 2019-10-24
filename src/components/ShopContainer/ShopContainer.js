@@ -228,10 +228,7 @@ function ShopContainer(props) {
 
                     <Selector title='Weapon Gummies' onChange={handleWeapon} onClick={handleSelector} onBack={handleBack} displayBar={displayWea} displayOptions={waeOptions} img={wIcon} type={'wea'}></Selector>
 
-                    <button style={{ display: displayBuy, }} onClick={handleClose} className={classes.button}>Buy GummiShip
-
-                    <span className={classes.tooltiptext}>Remember to save your Ship first</span>
-                    </button>
+                    <button style={{ display: displayBuy, }} onClick={handleClose} className={classes.button}>Buy GummiShip</button>
                 </div>
             </div>
 
@@ -297,19 +294,8 @@ const useStyles = makeStyles(theme => ({
         height: '75%',
         flexBasis: '75%',
         display: 'flex',
-        justifyContent: 'center'
-    },  tooltiptext: {
-        display: 'none',
-        width: '120px',
-        backgroundColor: 'black',
-        color: '#fff',
-        textAlign: 'center',
-        borderRadius: '6px',
-        padding: ' 5px 0',
-        position: 'absolute',
-        zIndex: '1',
-    }, 'tooltip:hover tooltiptext': {
-        display: 'inner-block',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     button: {
         width: "100%",
