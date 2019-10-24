@@ -86,24 +86,34 @@ const useStyles = makeStyles(theme => ({
     subtitle:{
         fontSize: '2em',
         fontFamily: 'menuFont',
-        color: '#FF8334',
+        color: '#EFB400',
     },
     button: {
         width: "35%",
         height: "10%",
-        borderRadius: '10px',
-        border: '1px #FF8334 solid',
+        border:'rgba(0.0.0.0) 2px solid',
         backgroundColor: 'rgba(0,0,0,0)',
+        backgroundSize: '50%',
         fontSize: '1em',
-        color: 'white',
+        color: '#EFB400',
         margin: '1em',
+        paddingRight: '4em',
+        paddingLeft: '0em',
         fontFamily: 'menuFont',
+        transition: 'all 1s',
 
-        '&:hover':{
-            backgroundColor: '#FF8334',
+        '&:hover': {
+            borderTop: '#FFB400 2px solid',
+            borderBottom: '#FFB400 2px solid',
+            backgroundSize: '100%',
+            background: 'linear-gradient(to right, rgba(144,100,23,0.25) 0%, rgba(239,158,1,0.57) 22%, rgba(239,180,0,1) 51%, rgba(239,158,1,0.49) 84%, rgba(144,100,23,0.25) 100%);',
+            fontSize: '1em',
+            color: 'white',
+            paddingLeft: '0em',
+            paddingRight: '0em',
+            cursor: 'pointer',
         },
     },
-
 
 }));
 

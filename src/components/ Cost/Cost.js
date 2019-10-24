@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 
-var price = 0;
 
 function Cost(props) {
 
@@ -11,7 +10,6 @@ function Cost(props) {
 
     if (price !== props.price) {
         setPrice(props.price);
-        console.log(price);
     }
 
     return (

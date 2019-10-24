@@ -12,7 +12,9 @@ function Shop(props) {
     const [weapons, setWeapons] = React.useState(null);
     const [wings, setWings] = React.useState(null);
 
-    function handleSelection(selection) {
+    var shipName;
+
+    function handleSelection(selection ) {
         if (selection.type === 'cab') {
             setCabin(selection);
         } else if (selection.type === 'wea') {
@@ -20,7 +22,13 @@ function Shop(props) {
         } else if (selection.type === 'win') {
             setWings(selection);
         }
+
     }
+
+    function handleName(event){
+        shipName = event.target.value;
+    }
+
 
     return (
         <div className={classes.main}>
@@ -29,11 +37,11 @@ function Shop(props) {
 
             <section className={classes.content}>
 
-                <input type='text' placeholder='SHIP NAME' className={classes.shipName} />
+                <input type='text' placeholder='SHIP NAME' onChange={handleName} className={classes.shipName} />
 
                 <section className={classes.notTitle}>
 
-                    <ShopContainer cabin={cabin} wings={wings} weapons={weapons} number={1} onSelection={handleSelection}>
+                    <ShopContainer name={shipName} cabin={cabin} wings={wings} weapons={weapons} number={1} onSelection={handleSelection} >
 
                     </ShopContainer>
 

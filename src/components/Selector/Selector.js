@@ -134,17 +134,19 @@ const useStyles = makeStyles(theme => ({
         transition: 'all 0.5s',
         marginTop: '1em',
         alignItems: 'center',
-        borderTop: 'rgba(0,0,0,0) 2px solid',
-        borderBottom: 'rgba(0,0,0,0) 2px solid',
+        fontSize: '1.3em',
+        backgroundSize: '50%',
+        border:'rgba(0,0,0,0) 2px solid',
         paddingLeft: '0.5em',
 
         '&:hover': {
             borderTop: '#FFB400 2px solid',
             borderBottom: '#FFB400 2px solid',
-            background: ' linear-gradient(to right, rgba(144,100,23,0.95) 0%, rgba(239,158,1,0.95) 20%, rgba(255,180,0,0.95) 49%, rgba(239,158,1,0.95) 82%, rgba(144,100,23,0.95) 100%);',
+            background: 'linear-gradient(to right, rgba(144,100,23,0.25) 0%, rgba(239,158,1,0.57) 22%, rgba(239,180,0,1) 51%, rgba(239,158,1,0.49) 84%, rgba(144,100,23,0.25) 100%);',
             fontSize: '1.3em',
             paddingLeft: '1em',
             cursor: 'pointer',
+            backgroundSize: '100%',
         },
 
     },

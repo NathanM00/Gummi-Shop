@@ -41,7 +41,9 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
         flexBasis: '30%',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        textDecoration: 'none',
+
     },
     buttons:{
         height: "100%",
