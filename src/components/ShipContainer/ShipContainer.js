@@ -90,6 +90,11 @@ const p5canvas = (domElem) => (application) => {
 
         application.pointLight(255, 255, 255, 300, 600, 50);
 
+        let dirX = (application.mouseX / application.width - 0.5) * 2;
+        let dirY = (application.mouseY / application.height - 0.5) * 2;
+        application.rotateX(dirY);
+        application.rotateY(dirX);
+
         if (cabin.type === 'A') {
             application.fill('#CAF4FF');
             application.ellipsoid(cabin.size - 40, cabin.size - 15, cabin.size - 50);
@@ -194,7 +199,7 @@ const p5canvas = (domElem) => (application) => {
             application.fill(weapons.col);
             application.rotateX(-1.5);
             application.translate(-90, 5, 20);
-            application.cylinder(15, 70, 40);
+            application.cylinder(15, 70, 60);
             application.rotateX(-3.05);
             application.translate(2, 78, 0);
             application.fill('#8D8D8D');
