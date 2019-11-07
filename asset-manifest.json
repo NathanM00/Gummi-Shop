@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/Gummi-Shop/static/css/main.02e68b77.chunk.css",
+    "main.js": "/Gummi-Shop/static/js/main.63bfa5a0.chunk.js",
+    "main.js.map": "/Gummi-Shop/static/js/main.63bfa5a0.chunk.js.map",
+    "runtime-main.js": "/Gummi-Shop/static/js/runtime-main.c035cb81.js",
+    "runtime-main.js.map": "/Gummi-Shop/static/js/runtime-main.c035cb81.js.map",
+    "static/js/2.79b29b46.chunk.js": "/Gummi-Shop/static/js/2.79b29b46.chunk.js",
+    "static/js/2.79b29b46.chunk.js.map": "/Gummi-Shop/static/js/2.79b29b46.chunk.js.map",
+    "index.html": "/Gummi-Shop/index.html",
+    "precache-manifest.bc483a8064d742504c69bdb662e0d90b.js": "/Gummi-Shop/precache-manifest.bc483a8064d742504c69bdb662e0d90b.js",
+    "service-worker.js": "/Gummi-Shop/service-worker.js",
+    "static/css/main.02e68b77.chunk.css.map": "/Gummi-Shop/static/css/main.02e68b77.chunk.css.map",
+    "static/media/bIcon.svg": "/Gummi-Shop/static/media/bIcon.4c4c495d.svg",
+    "static/media/background.jpg": "/Gummi-Shop/static/media/background.68db1f8e.jpg",
+    "static/media/bag.svg": "/Gummi-Shop/static/media/bag.70d8b46d.svg",
+    "static/media/ca1Icon.svg": "/Gummi-Shop/static/media/ca1Icon.aa97d6fe.svg",
+    "static/media/ca2Icon.svg": "/Gummi-Shop/static/media/ca2Icon.8b3df057.svg",
+    "static/media/ca3Icon.svg": "/Gummi-Shop/static/media/ca3Icon.412863c0.svg",
+    "static/media/cabinIcon.svg": "/Gummi-Shop/static/media/cabinIcon.f64c9bcc.svg",
+    "static/media/logo.svg": "/Gummi-Shop/static/media/logo.738e24fa.svg",
+    "static/media/mIcon.svg": "/Gummi-Shop/static/media/mIcon.1458f88e.svg",
+    "static/media/mickey.svg": "/Gummi-Shop/static/media/mickey.29178707.svg",
+    "static/media/niIDea.jpg": "/Gummi-Shop/static/media/niIDea.6594a8df.jpg",
+    "static/media/padIcon.svg": "/Gummi-Shop/static/media/padIcon.b973bef1.svg",
+    "static/media/shipnet.svg": "/Gummi-Shop/static/media/shipnet.42a694e4.svg",
+    "static/media/unknown.svg": "/Gummi-Shop/static/media/unknown.eb21c9c3.svg",
+    "static/media/wIcon.svg": "/Gummi-Shop/static/media/wIcon.cf4de23d.svg",
+    "static/media/wea1Icon.svg": "/Gummi-Shop/static/media/wea1Icon.de54d359.svg",
+    "static/media/wea2Icon.svg": "/Gummi-Shop/static/media/wea2Icon.ed4a4476.svg",
+    "static/media/wea3Icon.svg": "/Gummi-Shop/static/media/wea3Icon.7bfa859c.svg",
+    "static/media/win1Icon.svg": "/Gummi-Shop/static/media/win1Icon.d935f9cd.svg",
+    "static/media/win2Icon.svg": "/Gummi-Shop/static/media/win2Icon.63471642.svg",
+    "static/media/win3Icon.svg": "/Gummi-Shop/static/media/win3Icon.3074a45c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c035cb81.js",
+    "static/js/2.79b29b46.chunk.js",
+    "static/css/main.02e68b77.chunk.css",
+    "static/js/main.63bfa5a0.chunk.js"
+  ]
+}
