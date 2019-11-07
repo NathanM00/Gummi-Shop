@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Gummi-Shop/precache-manifest.061725e08ce1f316b58c994fdd7611a6.js"
+  "/Gummi-Shop/precache-manifest.a7530f8c6c526a668c2499122ca087a5.js"
 );
 
 self.addEventListener('message', (event) => {

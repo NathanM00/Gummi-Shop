@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f5ae17addec5af76e91c544e95bfb480",
+    "revision": "353e6949f796308d0431286477fdba0b",
     "url": "/Gummi-Shop/index.html"
   },
   {
-    "revision": "caa27915916b11d3ad48",
+    "revision": "f71d14f00b06735cd075",
     "url": "/Gummi-Shop/static/css/main.02e68b77.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Gummi-Shop/static/js/2.add434cb.chunk.js"
   },
   {
-    "revision": "caa27915916b11d3ad48",
-    "url": "/Gummi-Shop/static/js/main.dacdf160.chunk.js"
+    "revision": "f71d14f00b06735cd075",
+    "url": "/Gummi-Shop/static/js/main.477efed9.chunk.js"
   },
   {
     "revision": "f71a27187a4c42aed63c",
