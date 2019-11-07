@@ -194,7 +194,7 @@ function ShopContainer(props) {
                 props.onClose(true);
             }
         } else {
-
+                alert("First Save your Ship");
         }
     }
 

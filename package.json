@@ -1,9 +1,11 @@
 {
   "name": "gummiship",
+  "homepage": "https://nathanm00.github.io/Gummi-Shop",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.5.1",
+    "gh-pages": "^2.1.1",
     "p5": "^0.10.2",
     "react": "^16.10.2",
     "react-color": "^2.17.3",
@@ -17,7 +19,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"

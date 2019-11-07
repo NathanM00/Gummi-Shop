@@ -24,7 +24,7 @@ function CheckOutContainer(props) {
             <section className={classes.section}>
 
                 <button className={classes.button}>GummiCredits</button>
-                <button className={classes.button}>PayPal</button>
+                <button className={classes.button}>KingCredits</button>
 
             </section>
 
