@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Gummi-Shop/static/css/main.02e68b77.chunk.css",
-    "main.js": "/Gummi-Shop/static/js/main.63bfa5a0.chunk.js",
-    "main.js.map": "/Gummi-Shop/static/js/main.63bfa5a0.chunk.js.map",
+    "main.js": "/Gummi-Shop/static/js/main.dacdf160.chunk.js",
+    "main.js.map": "/Gummi-Shop/static/js/main.dacdf160.chunk.js.map",
     "runtime-main.js": "/Gummi-Shop/static/js/runtime-main.c035cb81.js",
     "runtime-main.js.map": "/Gummi-Shop/static/js/runtime-main.c035cb81.js.map",
-    "static/js/2.79b29b46.chunk.js": "/Gummi-Shop/static/js/2.79b29b46.chunk.js",
-    "static/js/2.79b29b46.chunk.js.map": "/Gummi-Shop/static/js/2.79b29b46.chunk.js.map",
+    "static/js/2.add434cb.chunk.js": "/Gummi-Shop/static/js/2.add434cb.chunk.js",
+    "static/js/2.add434cb.chunk.js.map": "/Gummi-Shop/static/js/2.add434cb.chunk.js.map",
     "index.html": "/Gummi-Shop/index.html",
-    "precache-manifest.bc483a8064d742504c69bdb662e0d90b.js": "/Gummi-Shop/precache-manifest.bc483a8064d742504c69bdb662e0d90b.js",
+    "precache-manifest.061725e08ce1f316b58c994fdd7611a6.js": "/Gummi-Shop/precache-manifest.061725e08ce1f316b58c994fdd7611a6.js",
     "service-worker.js": "/Gummi-Shop/service-worker.js",
     "static/css/main.02e68b77.chunk.css.map": "/Gummi-Shop/static/css/main.02e68b77.chunk.css.map",
     "static/media/bIcon.svg": "/Gummi-Shop/static/media/bIcon.4c4c495d.svg",
@@ -35,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.c035cb81.js",
-    "static/js/2.79b29b46.chunk.js",
+    "static/js/2.add434cb.chunk.js",
     "static/css/main.02e68b77.chunk.css",
-    "static/js/main.63bfa5a0.chunk.js"
+    "static/js/main.dacdf160.chunk.js"
   ]
 }
